@@ -9,8 +9,9 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import hotel.Animal;
-import hotel.Estadia;
+import hotel.*;
+//import hotel.Estadia;
+//import hotel.Hotel;
 
 public class PetShopTest {
 
@@ -29,7 +30,7 @@ public class PetShopTest {
 			Animal toto = new Animal("Toto", "Cachorro", 3);
 			
 			assertEquals(paola.getTipo(), "Cobra");
-			assertEquals(frederico.getNome(), "Freddie");
+			assertEquals(frederico.getNome(), "Frederico Mercury");
 			assertNotEquals(toto.getIdade(), 5000);
 			
 			Animal gabriel = new Animal("Gabriel", "Gato", 18);
@@ -76,13 +77,13 @@ public class PetShopTest {
 			recepcao.checkIn("Frederico Mercury", "Cachorro", 12, 70, 900.0);
 			
 			assertEquals(1, recepcao.getNumDeHospedes());
-			assertEquals(900.0, recepcao.getLucroTotal());
+			assertEquals(900.0, recepcao.getLucroTotal(), 0.05);
 			
 			recepcao.checkIn("Paola Bracho", "Cobra", 10, 1, 10.0);
 			recepcao.checkIn("Toto", "Cachorro", 3, 90, 800.0);
 			recepcao.checkIn("Gabriel", "Gato", 18, 3, 1000.0);
 			
-			assertEquals(4, recepcao.getNumDeHospedes(), 0.05);
+			assertEquals(4, recepcao.getNumDeHospedes());
 			assertEquals(2710.0, recepcao.getLucroTotal(), 0.05);
 			
 			recepcao.checkOut("Frederico Mercury");
@@ -91,7 +92,7 @@ public class PetShopTest {
 			
 			assertEquals(1, recepcao.getNumDeHospedes());
 			
-			assertEquals("Estadias:\nPaola Bracho (Cobra): 1 dias com o preco de R$ 10.00",
+			assertEquals("Estadias:\nPaola Bracho (Cobra): 1 dias com o preco de R$ 10,00",
 					recepcao.toString());
 		}catch(Exception e){
 			fail(); //Nao deve lancar excecao
@@ -104,16 +105,16 @@ public class PetShopTest {
 			hotel.checkIn("Frederico Mercury", "Cachorro", 12, 70, 900.0);
 			
 			assertEquals(1, hotel.getNumDeHospedes());
-			assertEquals(900.0, hotel.getLucroTotal());
+			assertEquals(900.0, hotel.getLucroTotal(), 0.05);
 			
 			hotel.checkOut("Frederico Mercury");
 			
 			assertEquals(0, hotel.getNumDeHospedes());
-			assertEquals(0, hotel.getLucroTotal());
+			assertEquals(0, hotel.getLucroTotal(), 0.05);
 			
 			hotel.checkIn("Jerry", "Rato", 9, 3, 120.0);
 			
-			assertEquals("Estadias:\nJerry (Rato): 3 dias com o preco de R$ 120.00",
+			assertEquals("Estadias:\nJerry (Rato): 3 dias com o preco de R$ 120,00",
 					hotel.toString());
 		}catch(Exception e){
 			fail(); //Nao deve lancar excecao

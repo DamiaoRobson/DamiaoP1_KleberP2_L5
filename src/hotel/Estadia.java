@@ -10,9 +10,10 @@ public class Estadia {
 	
 	public Estadia(String nome, String tipo, int idade, int dias, double preco) {
 		this.nome = nome;
-		this.setTipo(tipo);
-		this.setIdade(idade);
-		this.setPreco(preco);
+		this.tipo = tipo;
+		this.idade = idade;
+		this.dias = dias;
+		this.preco = preco;
 	}
 
 
@@ -67,7 +68,7 @@ public class Estadia {
 	
 	
 	public String toString(){
-		return String.format("%s, %s, %d dias com o preço de  R$ %.2f", this.getNome(),this.getTipo(), this.getDias(), this.getPreco());
+		return String.format("%s (%s): %d dias com o preco de R$ %.2f", this.getNome(),this.getTipo(), this.getDias(), this.getPreco());
 	}
 	
 	

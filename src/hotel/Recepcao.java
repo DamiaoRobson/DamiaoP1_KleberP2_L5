@@ -11,7 +11,7 @@ public class Recepcao {
 		this.estadias = new ArrayList<>();
 	}
 
-	public boolean checkIn(String nome, String tipo , int idade, int dias, int preco){
+	public boolean checkIn(String nome, String tipo , int idade, int dias, double preco){
 		return estadias.add(new Estadia(nome, tipo, idade, dias, preco));
 	}
 
@@ -27,16 +27,24 @@ public class Recepcao {
 		return false;
 	}
 
-	/*@Override
+	@Override
 	public String toString() {
-
-	}*/
-
-	public String hospedesAtuais() {
-		String lista = "Estadias:\n";
+		String lista = "Estadias:";
 		for (Estadia estadia : estadias) {
-			lista+= estadia + "\n";
+			lista+= "\n" + estadia;
 		}
 		return lista;
+	}
+	
+	public int getNumDeHospedes(){
+		return estadias.size();
+	}
+	
+	public double getLucroTotal(){
+		double valorTotal = 0;
+		for (Estadia estadia : estadias) {
+			valorTotal += estadia.getPreco();
+		}
+		return valorTotal;
 	}
 }

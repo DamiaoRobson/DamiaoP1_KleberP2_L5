@@ -9,7 +9,7 @@ public class Animal {
 	
 	public Animal(String nome, String tipo , int idade)throws Exception {
 		if(nome == null || nome.trim().isEmpty()){
-			throw new Exception("Nome do animal nao pode ser nulo ou vazio");
+			throw new Exception("Nome de um animal nao pode ser nulo ou vazio");
 		}
 		if(tipo == null || tipo.trim().isEmpty()){
 			throw new Exception("Tipo de um animal nao pode ser nulo ou vazio");
