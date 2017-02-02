@@ -1,5 +1,13 @@
 package hotel;
 
+/**
+ * 
+ * @author
+ * Damião Robson Domiciano - 116210003
+ * 
+ * Kleber Diogo Dias - 115211239
+ */
+
 import java.util.ArrayList;
 import java.util.List;
 
