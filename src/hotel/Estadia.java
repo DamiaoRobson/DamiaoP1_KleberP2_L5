@@ -1,4 +1,4 @@
-package testes;
+package hotel;
 
 public class Estadia {
 
